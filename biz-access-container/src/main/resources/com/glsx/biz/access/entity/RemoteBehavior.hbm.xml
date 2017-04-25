@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.glsx.biz.access.common.entity.RemoteBehavior" table="platform_access_remote_behavior" schema="cyb_os">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+
+        <property name="userId" type="java.lang.Integer">
+            <column name="user_id">
+                <comment>嘀嘀号</comment>
+            </column>
+        </property>
+        <property name="operateType" type="com.glsx.biz.access.common.entity.enums.OperateEnum">
+            <column name="operate_type">
+                <comment>操作类型：1拍照，2视频</comment>
+            </column>
+        </property>
+        <property name="operateValue" type="com.glsx.biz.access.common.entity.enums.MirroPositionEnum">
+            <column name="operate_value">
+                <comment>操作值：1前后视镜，2后后视镜，3前后后视镜</comment>
+            </column>
+        </property>
+        <property name="videoTime" type="java.lang.Integer">
+            <column name="video_time">
+                <comment>录视频的时长（秒）</comment>
+            </column>
+        </property>
+        <property name="mediaId" type="java.lang.String">
+            <column name="media_id">
+                <comment>媒体操作唯一标示id</comment>
+            </column>
+        </property>
+        <property name="imei" type="java.lang.String">
+            <column name="imei">
+                <comment>设备的imei</comment>
+            </column>
+        </property>
+        <property name="status" type="com.glsx.biz.access.common.entity.enums.RHCStatusEnum">
+            <column name="status">
+                <comment>数据状态，默认0，1已发送指令，2拍照完成，3发送指令失败。</comment>
+            </column>
+        </property>
+        <property name="source" type="com.glsx.biz.access.common.entity.enums.ReqSourceEnum">
+            <column name="source">
+                <comment>请求来源：1微信，2驾宝</comment>
+            </column>
+        </property>
+        <property name="reqResult" type="java.lang.String">
+            <column name="req_result">
+                <comment>调用第三方接口的返回结果</comment>
+            </column>
+        </property>
+        <property name="reciverStatus" type="com.glsx.biz.access.common.entity.enums.ReciverStatusEnum">
+            <column name="reciver_status">
+                <comment>数据状态，默认0，1已发送指令，2拍照完成，3发送指令失败。</comment>
+            </column>
+        </property>
+
+        <property name="createTime" type="java.util.Date">
+            <column name="create_time">
+            </column>
+        </property>
+        <property name="updateTime" type="java.util.Date">
+            <column name="update_time">
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

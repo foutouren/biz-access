@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="biz-access-container:war">
+    <output-path>$PROJECT_DIR$/biz-access-container/target</output-path>
+    <root id="archive" name="biz-access-container.war">
+      <element id="artifact" artifact-name="biz-access-container:war exploded" />
+    </root>
+  </artifact>
+</component>

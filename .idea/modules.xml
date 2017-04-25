@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/biz-access.iml" filepath="$PROJECT_DIR$/biz-access.iml" />
+      <module fileurl="file://$PROJECT_DIR$/biz-access-common/biz-access-common.iml" filepath="$PROJECT_DIR$/biz-access-common/biz-access-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/biz-access-container/biz-access-container.iml" filepath="$PROJECT_DIR$/biz-access-container/biz-access-container.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+    xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+  
+ 	<dubbo:application name="${dubbo.application.name}" owner="${dubbo.application.owner}" />
+ 	<dubbo:registry address="${dubbo.registry.address}" />
+ 	<dubbo:monitor protocol="registry" />
+ 	<dubbo:protocol name="dubbo" port="${dubbo.service.port}" threadpool="fixed" threads="500"/>
+	
+	<!-- Server -->
+	<dubbo:service ref="remoteBehaviorService" interface="com.glsx.biz.access.service.RemoteBehaviorService" version="1.0.0" timeout="100000" retries="0" protocol='dubbo'/>
+	<dubbo:service ref="mediaService" interface="com.glsx.biz.access.service.MediaService" version="1.0.0" timeout="100000" retries="0" protocol='dubbo'/>
+
+	<!-- Client -->
+	<dubbo:reference id="userService" interface="com.glsx.biz.user.service.UserService" version="1.0.0"  timeout="100000" retries="0" />
+	<dubbo:reference id="physicalDeviceService" interface="com.glsx.biz.user.service.PhysicalDeviceService" version="1.0.0"  timeout="100000" retries="0" />
+
+</beans> 
